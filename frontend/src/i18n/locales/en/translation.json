@@ -1,0 +1,116 @@
+{
+  "navbar": {
+  "home": "Home",
+  "menu": "Restaurants",
+  "mobileApp": "Mobile App",
+  "contact": "Contact Us",
+  "signIn": "Sign In",
+  "profile": "Profile",
+  "orders": "Orders",
+  "logout": "Logout"
+ },
+  "home": {
+    "exploreMenuTitle": "Explore our menu",
+    "exploreMenuDesc": "Our menu is a journey, with each dish as a destination.",
+    "topDishes": "Top dishes near you",
+    "exploreRestaurants": "Explore Restaurants"
+  },
+
+  "categories": {
+    "All": "All",
+    "Salad": "Salad",
+    "Rolls": "Rolls",
+    "Desserts": "Desserts",
+    "Sandwich": "Sandwich",
+    "Cake": "Cake",
+    "Pure Veg": "Pure Veg",
+    "Pasta": "Pasta",
+    "Noodles": "Noodles"
+  },
+  "cart": {
+    "items": "Items",
+    "title": "Title",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "remove": "Remove",
+
+    "cartTotals": "Cart Totals",
+    "subtotal": "Subtotal",
+    "tax": "Tax (10%)",
+    "deliveryFee": "Delivery Fee",
+    "grandTotal": "Total",
+
+    "checkout": "Proceed To Checkout",
+    "promoText": "If you have a promo code, enter it here",
+    "promoPlaceholder": "Promo Code",
+    "submit": "Submit"
+  },
+  "placeOrder": {
+    "deliveryInfo": "Delivery Information",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "street": "Street",
+    "city": "City",
+    "state": "State",
+    "zip": "Zip code",
+    "country": "Country",
+    "phone": "Phone",
+
+    "cartTotals": "Cart Totals",
+    "subtotal": "Subtotal",
+    "tax": "Tax (10%)",
+    "deliveryFee": "Delivery Fee",
+    "total": "Total",
+
+    "proceedPayment": "Proceed To Payment"
+  },
+  "login": {
+    "signup": "Sign Up",
+    "login": "Login",
+    "yourName": "Your Name",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "alreadyAccount": "Already have an account?",
+    "dontHaveAccount": "Don’t have an account?"
+  },
+  "footer": {
+    "description": "Freshly prepared with quality ingredients to deliver great taste in every bite.",
+
+    "company": "Company",
+    "home": "Home",
+    "about": "About us",
+    "delivery": "Delivery",
+    "privacy": "Privacy policy",
+
+    "getInTouch": "Get in touch",
+    "copyright": "Copyright 2026 © Quickbites.com - All Rights Reserved"
+  },
+  "header": {
+    "title": "Order your favourite food here",
+    "subtitle": "Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise",
+    "viewMenu": "View Menu"
+  },
+  "appDownload": {
+    "line1": "For Better Experience Download",
+    "line2": "QuickBites App"
+  },
+  "payment": {
+    "orderSummary": "Order Summary",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "tax": "Tax (10%)",
+    "deliveryFee": "Delivery Fee",
+    "total": "Total",
+
+    "cardNumber": "Card Number",
+    "cardHolder": "Card Holder",
+    "expires": "Expires",
+    "cvc": "CVC",
+    "checkout": "Checkout"
+  }
+
+}
+  

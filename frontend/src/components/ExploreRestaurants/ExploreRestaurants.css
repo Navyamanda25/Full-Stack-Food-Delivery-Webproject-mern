@@ -1,0 +1,19 @@
+.explore-restaurants {
+  margin: 40px 0;
+}
+
+.explore-restaurants h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.restaurant-list {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.restaurant-list::-webkit-scrollbar {
+  display: none;
+}

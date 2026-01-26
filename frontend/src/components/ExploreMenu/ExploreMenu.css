@@ -1,0 +1,96 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.explore-menu h1 {
+    color: #262626;
+    font-weight: 500;
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #808080;
+}
+
+/* ================= RESTAURANT LIST ================= */
+.explore-menu-list {
+    display: flex;
+    gap: 80px;
+    padding:10px 20px;
+    align-items: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+    padding-bottom: 10px;
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= RESTAURANT ITEM ================= */
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Lift on hover */
+.explore-menu-list-item:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= ROUND IMAGE ================= */
+.explore-menu-list-item img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover zoom + shadow */
+.explore-menu-list-item:hover img {
+    transform: scale(1.08);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= ACTIVE RESTAURANT ================= */
+.explore-menu-list-item.active img {
+    border: 3px solid tomato;
+    box-shadow: 0px 10px 30px rgba(255, 99, 71, 0.5);
+}
+
+/* ================= RESTAURANT NAME ================= */
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #747474;
+    font-size: max(1.4vw, 16px);
+    cursor: pointer;
+}
+
+/* ================= DIVIDER ================= */
+.explore-menu hr {
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1050px) {
+    .explore-menu-text {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .explore-menu-list-item img {
+        width: 100px;
+        height: 100px;
+    }
+}

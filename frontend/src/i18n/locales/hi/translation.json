@@ -1,0 +1,117 @@
+{
+   "navbar": {
+    "home": "होम",
+    "menu": "रेस्टोरेंट्स",
+    "mobileApp": "मोबाइल ऐप",
+    "contact": "संपर्क करें",
+    "signIn": "साइन इन",
+    "profile": "प्रोफ़ाइल",
+    "orders": "ऑर्डर्स",
+    "logout": "लॉग आउट"
+  },
+
+  "home": {
+    "exploreMenuTitle": "हमारा मेनू देखें",
+    "exploreMenuDesc": "हमारा मेनू एक यात्रा है, जहाँ हर व्यंजन एक मंज़िल है।",
+    "exploreRestaurants": "रेस्टोरेंट्स देखें",
+    "topDishes": "आपके पास के लोकप्रिय व्यंजन"
+  },
+
+  "categories": {
+    "All": "सभी",
+    "Salad": "सलाद",
+    "Rolls": "रोल्स",
+    "Desserts": "डेज़र्ट्स",
+    "Sandwich": "सैंडविच",
+    "Cake": "केक",
+    "Pure Veg": "प्योर वेज",
+    "Pasta": "पास्ता",
+    "Noodles": "नूडल्स"
+  },
+  "cart": {
+    "items": "आइटम",
+    "title": "नाम",
+    "price": "कीमत",
+    "quantity": "मात्रा",
+    "total": "कुल",
+    "remove": "हटाएं",
+
+    "cartTotals": "कार्ट का विवरण",
+    "subtotal": "उप-योग",
+    "tax": "कर (10%)",
+    "deliveryFee": "डिलीवरी शुल्क",
+    "grandTotal": "कुल राशि",
+
+    "checkout": "चेकआउट करें",
+    "promoText": "यदि आपके पास प्रोमो कोड है, यहाँ दर्ज करें",
+    "promoPlaceholder": "प्रोमो कोड",
+    "submit": "जमा करें"
+  },
+  "placeOrder": {
+    "deliveryInfo": "डिलीवरी की जानकारी",
+    "firstName": "पहला नाम",
+    "lastName": "अंतिम नाम",
+    "email": "ईमेल पता",
+    "street": "गली / सड़क",
+    "city": "शहर",
+    "state": "राज्य",
+    "zip": "पिन कोड",
+    "country": "देश",
+    "phone": "फ़ोन नंबर",
+
+    "cartTotals": "कार्ट का कुल",
+    "subtotal": "उप-योग",
+    "tax": "कर (10%)",
+    "deliveryFee": "डिलीवरी शुल्क",
+    "total": "कुल राशि",
+
+    "proceedPayment": "भुगतान के लिए आगे बढ़ें"
+  },
+  "login": {
+    "signup": "साइन अप",
+    "login": "लॉगिन",
+    "yourName": "आपका नाम",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "submit": "सबमिट करें",
+    "alreadyAccount": "पहले से अकाउंट है?",
+    "dontHaveAccount": "अकाउंट नहीं है?"
+  },
+  "footer": {
+    "description": "हर निवाले में बेहतरीन स्वाद देने के लिए गुणवत्तापूर्ण सामग्री से ताज़ा तैयार किया गया।",
+
+    "company": "कंपनी",
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "delivery": "डिलीवरी",
+    "privacy": "गोपनीयता नीति",
+
+    "getInTouch": "संपर्क करें",
+    "copyright": "कॉपीराइट 2026 © Quickbites.com - सर्वाधिकार सुरक्षित"
+  },
+  "header": {
+    "title": "यहाँ अपना पसंदीदा खाना ऑर्डर करें",
+    "subtitle": "उत्कृष्ट सामग्री और पाक कला विशेषज्ञता से तैयार स्वादिष्ट व्यंजनों की विविध मेनू से चुनें",
+    "viewMenu": "मेनू देखें"
+  },
+  
+  "appDownload": {
+    "line1": "बेहतर अनुभव के लिए डाउनलोड करें",
+    "line2": "क्विकबाइट्स ऐप"
+  },
+
+  "payment": {
+    "orderSummary": "ऑर्डर सारांश",
+    "quantity": "मात्रा",
+    "subtotal": "उप-योग",
+    "tax": "कर (10%)",
+    "deliveryFee": "डिलीवरी शुल्क",
+    "total": "कुल राशि",
+
+    "cardNumber": "कार्ड नंबर",
+    "cardHolder": "कार्ड धारक",
+    "expires": "समाप्ति तिथि",
+    "cvc": "सीवीसी",
+    "checkout": "चेकआउट"
+  }
+}
