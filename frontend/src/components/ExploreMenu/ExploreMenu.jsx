@@ -9,16 +9,8 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/restaurants`)
       .then((res) => res.json())
-      .then((data) =>
-       
-        setRestaurants(
-          data.map((r) => ({
-            ...r,
-            name: r.displayName,
-          }))
-        )
-      );
-  }, []);
+      .then((data) => setRestaurants(data));
+  }, [i18n.language]); 
 
   const getDisplayName = (r) => {
     if (i18n.language === "te") return r.name_te || r.name;
@@ -37,10 +29,10 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
             className={`explore-menu-list-item ${
               selectedRestaurant === r.name ? "active" : ""
             }`}
-            onClick={() => setSelectedRestaurant(r.name)}
+            onClick={() => setSelectedRestaurant(r.name)} 
           >
             <img src={r.image} alt={r.name} />
-            <p>{getDisplayName(r)}</p>
+            <p>{getDisplayName(r)}</p> {/*  Translated name */}
           </div>
         ))}
       </div>
