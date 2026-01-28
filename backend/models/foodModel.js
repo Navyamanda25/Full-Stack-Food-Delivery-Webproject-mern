@@ -8,6 +8,9 @@ const foodSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   image: { type: String, required: true },
   category: { type: String, required: true },
+
+  
+  restaurant: { type: String, required: true }  // "Spice Hub"
 });
 
 const foodModel =
