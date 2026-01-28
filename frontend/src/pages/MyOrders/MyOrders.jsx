@@ -5,10 +5,8 @@ import "./MyOrders.css";
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
-  // ✅ FIX 1: use env instead of hardcoded URL
   const url = import.meta.env.VITE_BACKEND_URL;
 
-  // 🔹 Fetch orders
   useEffect(() => {
     fetchOrders();
   }, []);
@@ -29,12 +27,11 @@ const MyOrders = () => {
     }
   };
 
-  // 🔹 Mark order as delivered
+  
   const markAsDelivered = async (orderId) => {
     try {
       const token = localStorage.getItem("token");
 
-      // ✅ FIX 2: add Authorization header
       await axios.put(
         `${url}/api/order/deliver/${orderId}`,
         {},
@@ -59,8 +56,12 @@ const MyOrders = () => {
 
       {orders.map((order) => (
         <div key={order._id} className="order-card">
-          <p><b>Status:</b> {order.status}</p>
-          <p><b>Total:</b> ₹{order.totalAmount}</p>
+          <p>
+            <b>Status:</b> {order.status}
+          </p>
+          <p>
+            <b>Total:</b> ₹{order.totalAmount}
+          </p>
 
           {order.items.map((item, i) => (
             <div key={i} className="order-item">
@@ -71,11 +72,7 @@ const MyOrders = () => {
             </div>
           ))}
 
-          {order.status !== "Delivered" && (
-            <button onClick={() => markAsDelivered(order._id)}>
-              Mark as Delivered
-            </button>
-          )}
+          {}
         </div>
       ))}
     </div>
