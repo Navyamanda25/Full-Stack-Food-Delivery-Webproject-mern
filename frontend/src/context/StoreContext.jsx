@@ -1,27 +1,30 @@
 import { createContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
+  // ================= LANGUAGE =================
+  const { i18n } = useTranslation();
 
   // ================= STATES =================
-  const [food_list, setFoodList] = useState([]);     // MUST be array
+  const [food_list, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});
-  const [searchText, setSearchText] = useState(""); //  SEARCH STATE
+  const [searchText, setSearchText] = useState("");
 
-  // StoreContext.js
-const url = import.meta.env.VITE_BACKEND_URL;
+  // ================= BACKEND URL =================
+  const url = import.meta.env.VITE_BACKEND_URL;
 
-  // ================= FETCH FOOD FROM BACKEND =================
+  // ================= FETCH FOOD =================
   const fetchFoodList = async () => {
     try {
-      const response = await fetch(`${url}/api/food/list`);
+      const response = await fetch(
+        `${url}/api/food/list?lang=${i18n.language}`
+      );
+
       const result = await response.json();
 
-      //  HANDLE ALL POSSIBLE BACKEND RESPONSES
-      if (Array.isArray(result)) {
-        setFoodList(result);
-      } else if (Array.isArray(result.data)) {
+      if (result.success && Array.isArray(result.data)) {
         setFoodList(result.data);
       } else {
         console.error("Unexpected food API response:", result);
@@ -33,9 +36,10 @@ const url = import.meta.env.VITE_BACKEND_URL;
     }
   };
 
+  // 🔥 Refetch food whenever language changes
   useEffect(() => {
     fetchFoodList();
-  }, []);
+  }, [i18n.language]);
 
   // ================= CART FUNCTIONS =================
   const addToCart = (itemId) => {
@@ -83,8 +87,8 @@ const url = import.meta.env.VITE_BACKEND_URL;
     removeFromCart,
     setCartItems,
     getTotalCartAmount,
-    searchText,        // EXPORT SEARCH
-    setSearchText,     //  EXPORT SEARCH SETTER
+    searchText,
+    setSearchText,
     url,
   };
 
