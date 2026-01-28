@@ -1,9 +1,4 @@
-import React from "react";
-import "./ExploreRestaurants.css";
-import RestaurantItem from "../RestaurantItem/RestaurantItem";
-
-
-const BASE_URL = import.meta.env.VITE_BACimport React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ExploreRestaurants.css";
 import RestaurantItem from "../RestaurantItem/RestaurantItem";
 import axios from "axios";
@@ -15,19 +10,25 @@ const ExploreRestaurants = ({ setSelectedRestaurant }) => {
   const [restaurants, setRestaurants] = useState([]);
   const { i18n } = useTranslation();
 
+ 
   useEffect(() => {
     fetchRestaurants();
-  }, [i18n.language]); 
+  }, [i18n.language]);
 
   const fetchRestaurants = async () => {
     try {
-      const res = await axios.get(
-        `${BASE_URL}/api/restaurants?lang=${i18n.language}`
-      );
+      const res = await axios.get(`${BASE_URL}/api/restaurants`);
       setRestaurants(res.data);
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching restaurants:", error);
     }
+  };
+
+  
+  const getRestaurantName = (res) => {
+    if (i18n.language === "te") return res.name_te || res.name;
+    if (i18n.language === "hi") return res.name_hi || res.name;
+    return res.name;
   };
 
   return (
@@ -35,63 +36,18 @@ const ExploreRestaurants = ({ setSelectedRestaurant }) => {
       <h2>Explore Restaurants</h2>
 
       <div className="restaurant-list">
-        {restaurants.map((res) => (
-          <RestaurantItem
-            key={res._id}
-            name={res.displayName} 
-            image={res.image}
-            onClick={() => setSelectedRestaurant(res.displayName)}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+        {restaurants.map((res) => {
+          const displayName = getRestaurantName(res);
 
-export default ExploreRestaurants;
-KEND_URL;
-
-const restaurants = [
-  {
-    name: "Spice Hub",
-    image: `${BASE_URL}/images/restaurants/spicehub.png`,
-  },
-  {
-    name: "Green Leaf",
-    image: `${BASE_URL}/images/restaurants/greenleaf.png`,
-  },
-  {
-    name: "Food Corner",
-    image: `${BASE_URL}/images/restaurants/foodcorner.png`,
-  },
-  {
-    name: "Urban Bites",
-    image: `${BASE_URL}/images/restaurants/urbanbites.png`,
-  },
-  {
-    name: "Royal Tandoor",
-    image: `${BASE_URL}/images/restaurants/royaltandoor.png`,
-  },
-   {
-    name: "Cafe Aroma",
-    image: `${BASE_URL}/images/restaurants/cafearoma.png`,
-  },
-];
-
-const ExploreRestaurants = ({ setSelectedRestaurant }) => {
-  return (
-    <div className="explore-restaurants">
-      <h2>Explore Restaurants</h2>
-
-      <div className="restaurant-list">
-        {restaurants.map((res, index) => (
-          <RestaurantItem
-            key={index}
-            name={res.name}
-            image={res.image}
-            onClick={() => setSelectedRestaurant(res.name)}
-          />
-        ))}
+          return (
+            <RestaurantItem
+              key={res._id}
+              name={displayName}
+              image={res.image}
+              onClick={() => setSelectedRestaurant(displayName)}
+            />
+          );
+        })}
       </div>
     </div>
   );
