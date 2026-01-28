@@ -6,15 +6,18 @@ const addFood = async (req, res) => {
   try {
     const image_filename = req.file.filename;
 
-    const food = new foodModel({
-      name: req.body.name,        // English
-      name_hi: req.body.name_hi,  // Hindi
-      name_te: req.body.name_te,  // Telugu
-      description: req.body.description,
-      price: req.body.price,
-      category: req.body.category,
-      image: image_filename,
-    });
+   const food = new foodModel({
+  name: req.body.name,
+  name_hi: req.body.name_hi,
+  name_te: req.body.name_te,
+  description: req.body.description,
+  price: req.body.price,
+  category: req.body.category,
+  image: image_filename,
+
+  
+  restaurant: req.body.restaurant   
+});
 
     await food.save();
     res.json({ success: true, message: "Food Added" });
