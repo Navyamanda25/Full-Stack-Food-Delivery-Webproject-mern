@@ -49,4 +49,4 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
 };
 
 export default ExploreMenu;
-===================================
+
