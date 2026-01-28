@@ -6,22 +6,22 @@ const router = express.Router();
 // GET all restaurants
 router.get("/", async (req, res) => {
   try {
-    const lang = req.query.lang || "en"; // en | hi | te
+    const lang = req.query.lang || "en";
 
     const restaurants = await Restaurant.find();
 
-    const formattedRestaurants = restaurants.map((r) => ({
+    const formatted = restaurants.map((r) => ({
       _id: r._id,
       image: r.image,
-      name:
+      displayName:
         lang === "hi"
           ? r.name_hi
           : lang === "te"
           ? r.name_te
-          : r.name, // default English
+          : r.name,
     }));
 
-    res.json(formattedRestaurants);
+    res.json(formatted);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
