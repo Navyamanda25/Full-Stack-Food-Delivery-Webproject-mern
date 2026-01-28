@@ -1,14 +1,17 @@
+/* ================= EXPLORE MENU CONTAINER ================= */
 .explore-menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.explore-menu h1 {
+/* ================= TITLE ================= */
+.explore-menu h2 {
     color: #262626;
     font-weight: 500;
 }
 
+/* ================= OPTIONAL TEXT ================= */
 .explore-menu-text {
     max-width: 60%;
     color: #808080;
@@ -18,9 +21,9 @@
 .explore-menu-list {
     display: flex;
     gap: 80px;
-    padding:10px 20px;
+    padding: 10px 20px;
     align-items: center;
-    margin: 20px 0px;
+    margin: 20px 0;
     overflow-x: scroll;
     padding-bottom: 10px;
 }
@@ -66,17 +69,24 @@
     box-shadow: 0px 10px 30px rgba(255, 99, 71, 0.5);
 }
 
-/* ================= RESTAURANT NAME ================= */
+/* ================= RESTAURANT NAME (FIXED) ================= */
 .explore-menu-list-item p {
     margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw, 16px);
-    cursor: pointer;
+    font-size: 16px;          /* fixed readable size */
+    font-weight: 600;        /* visible */
+    color: #222;             /* dark text */
+    text-align: center;
+    display: block;
+}
+
+/* ================= ACTIVE NAME COLOR ================= */
+.explore-menu-list-item.active p {
+    color: tomato;
 }
 
 /* ================= DIVIDER ================= */
 .explore-menu hr {
-    margin: 10px 0px;
+    margin: 10px 0;
     height: 2px;
     background-color: #e2e2e2;
     border: none;
@@ -92,5 +102,9 @@
     .explore-menu-list-item img {
         width: 100px;
         height: 100px;
+    }
+
+    .explore-menu-list-item p {
+        font-size: 14px;
     }
 }
