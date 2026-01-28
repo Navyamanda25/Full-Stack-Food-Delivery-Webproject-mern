@@ -15,6 +15,17 @@ export const placeOrder = async (req, res) => {
       status: "Placed",
     });
 
+    
+    setTimeout(async () => {
+      try {
+        await Order.findByIdAndUpdate(order._id, {
+          status: "Delivered",
+        });
+      } catch (err) {
+        console.error("Auto delivery failed:", err);
+      }
+    }, 30 * 1000); // 30 seconds
+
     res.json({
       success: true,
       message: "Order placed successfully",
@@ -52,7 +63,7 @@ export const getMyOrders = async (req, res) => {
 };
 
 // =======================
-//  LIST ALL ORDERS (ADMIN)  
+//  LIST ALL ORDERS (ADMIN)
 // =======================
 export const listOrders = async (req, res) => {
   try {
@@ -76,7 +87,7 @@ export const listOrders = async (req, res) => {
 };
 
 // =======================
-//  MARK ORDER DELIVERED
+//  MARK ORDER DELIVERED (MANUAL – STILL WORKS)
 // =======================
 export const markOrderDelivered = async (req, res) => {
   try {
