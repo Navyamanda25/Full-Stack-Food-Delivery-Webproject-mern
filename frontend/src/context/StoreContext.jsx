@@ -36,7 +36,7 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  // 🔥 Refetch food whenever language changes
+ 
   useEffect(() => {
     fetchFoodList();
   }, [i18n.language]);
