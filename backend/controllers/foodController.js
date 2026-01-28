@@ -30,7 +30,7 @@ const addFood = async (req, res) => {
 // ================= LIST FOOD =================
 const listFood = async (req, res) => {
   try {
-    const lang = req.query.lang || "en"; // en | hi | te
+    const lang = req.query.lang || "en";
 
     const foods = await foodModel.find({});
 
@@ -40,11 +40,13 @@ const listFood = async (req, res) => {
       price: f.price,
       category: f.category,
       description: f.description,
+      restaurant: f.restaurant,  
+
       name:
         lang === "hi"
-          ? f.name_hi
+          ? f.name_hi || f.name
           : lang === "te"
-          ? f.name_te
+          ? f.name_te || f.name
           : f.name,
     }));
 
