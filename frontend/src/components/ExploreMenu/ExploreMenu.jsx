@@ -10,11 +10,11 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/api/restaurants`)
       .then((res) => res.json())
       .then((data) =>
-       
         setRestaurants(
           data.map((r) => ({
             ...r,
-            name: r.displayName,
+           
+            name: r.displayName || r.name,
           }))
         )
       );
@@ -37,10 +37,10 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
             className={`explore-menu-list-item ${
               selectedRestaurant === r.name ? "active" : ""
             }`}
-            onClick={() => setSelectedRestaurant(r.name)}
+            onClick={() => setSelectedRestaurant(r.name)} 
           >
             <img src={r.image} alt={r.name} />
-            <p>{getDisplayName(r)}</p>
+            <p>{getDisplayName(r)}</p> {/*  Translated label */}
           </div>
         ))}
       </div>
@@ -49,4 +49,3 @@ const ExploreMenu = ({ selectedRestaurant, setSelectedRestaurant }) => {
 };
 
 export default ExploreMenu;
-
