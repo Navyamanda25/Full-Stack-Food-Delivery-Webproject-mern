@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
-
 const restaurants = [
   {
     key: "Spice Hub",
@@ -52,25 +51,25 @@ const restaurants = [
 ];
 
 const ExploreRestaurants = ({ setSelectedRestaurant }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const getDisplayName = (res) => {
-    if (i18n.language === "te") return res.name_te;
-    if (i18n.language === "hi") return res.name_hi;
+    if (i18n.language.startsWith("te")) return res.name_te;
+    if (i18n.language.startsWith("hi")) return res.name_hi;
     return res.name;
   };
 
   return (
     <div className="explore-restaurants" id="restaurants">
-      <h2>Explore Restaurants</h2>
+      <h2>{t("explore_restaurants")}</h2>
 
       <div className="restaurant-list">
         {restaurants.map((res) => (
           <RestaurantItem
             key={res.key}
-            name={getDisplayName(res)}         
+            name={getDisplayName(res)}
             image={res.image}
-            onClick={() => setSelectedRestaurant(res.key)} 
+            onClick={() => setSelectedRestaurant(res.key)}
           />
         ))}
       </div>
