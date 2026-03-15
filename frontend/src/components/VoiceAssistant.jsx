@@ -23,10 +23,18 @@ if (i18n.language === "te") {
 
 recognition.continuous = false;
 
-  const startListening = () => {
-    setListening(true);
-    recognition.start();
-  };
+ const startListening = () => {
+  const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const recognition = new SpeechRecognition();
+
+  if (i18n.language === "te") recognition.lang = "te-IN";
+  else if (i18n.language === "hi") recognition.lang = "hi-IN";
+  else recognition.lang = "en-IN";
+
+  recognition.start();
+};
 
   recognition.onresult = (event) => {
     const command = event.results[0][0].transcript.toLowerCase();
