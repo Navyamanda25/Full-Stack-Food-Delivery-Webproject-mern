@@ -11,8 +11,17 @@ const VoiceAssistant = () => {
     window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
+
+// Set recognition language dynamically
+if (i18n.language === "te") {
+  recognition.lang = "te-IN";
+} else if (i18n.language === "hi") {
+  recognition.lang = "hi-IN";
+} else {
   recognition.lang = "en-IN";
-  recognition.continuous = false;
+}
+
+recognition.continuous = false;
 
   const startListening = () => {
     setListening(true);
